@@ -5,6 +5,7 @@ In progress ...
 ## Goal
 
 Create a WebApi Kata to develop a Web API using:
+
 - TDD
 - Hexagonal Architecture
 - `Microsoft.AspNetCore.Mvc.Testing`
