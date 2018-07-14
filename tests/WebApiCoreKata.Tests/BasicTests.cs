@@ -7,17 +7,10 @@ using Xunit;
 
 namespace WebApiCoreKata.Tests
 {
-    public class BasicTests : IClassFixture<CustomWebApplicationFactory<Startup>>
+    public class BasicTests : WebApiTests
     {
-        private readonly WebApplicationFactory<Startup> _factory;
-
-        public BasicTests(CustomWebApplicationFactory<Startup> factory)
+        public BasicTests(CustomWebApplicationFactory<Startup> factory) : base(factory)
         {
-            _factory = factory.WithWebHostBuilder(builder =>
-            {
-                // for things like Razor, etc ...
-                //builder.UseSolutionRelativeContentRoot("<SOLUTION-RELATIVE-PATH>");
-            });
         }
 
         [Theory]
@@ -25,7 +18,7 @@ namespace WebApiCoreKata.Tests
         public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)
         {
             // Arrange
-            var client = _factory.CreateClient(
+            var client = Factory.CreateClient(
                 new WebApplicationFactoryClientOptions
                 {
                     AllowAutoRedirect = false

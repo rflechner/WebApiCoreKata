@@ -19,7 +19,6 @@ namespace WebApiCoreKata.Tests
         {
             builder.ConfigureServices(services =>
             {
-                // Create a new service provider.
                 var serviceProvider = new ServiceCollection()
                     .AddEntityFrameworkInMemoryDatabase()
                     .BuildServiceProvider();
@@ -28,8 +27,6 @@ namespace WebApiCoreKata.Tests
                 {
                     options.UseInMemoryDatabase("InMemoryDbForTesting");
                     options.UseInternalServiceProvider(serviceProvider);
-                    
-                    
                 });
 
                 
@@ -46,19 +43,8 @@ namespace WebApiCoreKata.Tests
 
                     try
                     {
-//                        Utilities.InitializeDbForTests(db);
-                        
-//                        db.Customers.Add(new CustomerDto
-//                        {
-//                            Id = Guid.NewGuid(),
-//                            Birth = new DateTime(1988, 05, 02),
-//                            FirstName = "Leti",
-//                            LastName = "Coco"
-//                        });
-
                         db.Customers.AddRange(fakeCustomers);
                         db.SaveChanges();
-
                     }
                     catch (Exception ex)
                     {
