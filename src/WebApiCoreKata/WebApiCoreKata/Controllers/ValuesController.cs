@@ -1,23 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using WebApiCoreKata.Domain.Entities;
 
 namespace WebApiCoreKata.Controllers
 {
-    [Route("api/[controller]")]
-    public class CustomersController : Controller
-    {
-        [HttpGet]
-        public async Task<IEnumerable<Customer>> GetAll()
-        {
-            return null;
-        }
-    }
-        
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
