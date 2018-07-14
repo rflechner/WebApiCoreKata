@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiCoreKata.Domain\WebApiCoreKata.Domain.csproj" />
+    <ProjectReference Include="..\WebApiCoreKata.Persistence\WebApiCoreKata.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

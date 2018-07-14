@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCoreKata", "WebApiCoreKata\WebApiCoreKata.csproj", "{FE993154-8997-408D-8703-A232A836DF68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCoreKata.Tests", "..\..\tests\WebApiCoreKata.Tests\WebApiCoreKata.Tests.csproj", "{7157EC4A-EBF9-4A10-9600-8D69F77BE227}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5C189843-FE09-488F-8FCE-6F8E92EF3EA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCoreKata.Persistence", "WebApiCoreKata.Persistence\WebApiCoreKata.Persistence.csproj", "{61B7A718-9EA1-4902-AA41-11ED08065A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCoreKata.Persistence.SqlServer", "WebApiCoreKata.Persistence.SqlServer\WebApiCoreKata.Persistence.SqlServer.csproj", "{D41F7ADB-5750-4A23-9217-3330ACFACFBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCoreKata.Domain", "WebApiCoreKata.Domain\WebApiCoreKata.Domain.csproj", "{FFC024CA-BD57-4D24-91BA-5C6258139851}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE993154-8997-408D-8703-A232A836DF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE993154-8997-408D-8703-A232A836DF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE993154-8997-408D-8703-A232A836DF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE993154-8997-408D-8703-A232A836DF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7157EC4A-EBF9-4A10-9600-8D69F77BE227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7157EC4A-EBF9-4A10-9600-8D69F77BE227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7157EC4A-EBF9-4A10-9600-8D69F77BE227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7157EC4A-EBF9-4A10-9600-8D69F77BE227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B7A718-9EA1-4902-AA41-11ED08065A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B7A718-9EA1-4902-AA41-11ED08065A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B7A718-9EA1-4902-AA41-11ED08065A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B7A718-9EA1-4902-AA41-11ED08065A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D41F7ADB-5750-4A23-9217-3330ACFACFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41F7ADB-5750-4A23-9217-3330ACFACFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41F7ADB-5750-4A23-9217-3330ACFACFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41F7ADB-5750-4A23-9217-3330ACFACFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC024CA-BD57-4D24-91BA-5C6258139851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC024CA-BD57-4D24-91BA-5C6258139851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC024CA-BD57-4D24-91BA-5C6258139851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC024CA-BD57-4D24-91BA-5C6258139851}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7157EC4A-EBF9-4A10-9600-8D69F77BE227} = {5C189843-FE09-488F-8FCE-6F8E92EF3EA3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01D1A66C-0251-4328-874A-1629EB7F79D0}
+	EndGlobalSection
+EndGlobal
