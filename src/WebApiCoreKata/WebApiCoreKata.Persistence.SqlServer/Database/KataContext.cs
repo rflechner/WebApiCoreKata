@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using WebApiCoreKata.Persistence.SqlServer.Dto;
 
 namespace WebApiCoreKata.Persistence.SqlServer.Database
 {
@@ -23,12 +24,19 @@ namespace WebApiCoreKata.Persistence.SqlServer.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=BIG_ROMCY\\SQLEXPRESS;Database=WebApiCoreKata;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {}
+
+        //Tables
+
+        /**
+         * dotnet ef migrations add add_customers
+         */
+        public DbSet<CustomerDto> Customers { get; set; }
     }
 }
