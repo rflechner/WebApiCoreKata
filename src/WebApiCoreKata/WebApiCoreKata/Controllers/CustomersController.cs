@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApiCoreKata.Domain.Entities;
+using WebApiCoreKata.Models;
 using WebApiCoreKata.Persistence;
 
 namespace WebApiCoreKata.Controllers
@@ -10,7 +12,7 @@ namespace WebApiCoreKata.Controllers
   [Route("api/[controller]")]
   public class CustomersController : Controller
   {
-    private ICustomersRepository customersRepository;
+    private readonly ICustomersRepository customersRepository;
 
     public CustomersController(ICustomersRepository customersRepository)
     {
@@ -18,9 +20,11 @@ namespace WebApiCoreKata.Controllers
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Customer>> GetAll(CancellationToken cancellationToken)
+    public async Task<IEnumerable<CustomerPresenter>> GetAll(CancellationToken cancellationToken = default)
     {
-      return null;
+      var customers = await customersRepository.GetAll(cancellationToken).ConfigureAwait(false);
+
+      return customers.Select(CustomerPresenter.From);
     }
   }
 }
