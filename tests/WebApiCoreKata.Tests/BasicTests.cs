@@ -7,8 +7,7 @@ using Xunit;
 
 namespace WebApiCoreKata.Tests
 {
-    public class BasicTests
-        : IClassFixture<CustomWebApplicationFactory<Startup>>
+    public class BasicTests : IClassFixture<CustomWebApplicationFactory<Startup>>
     {
         private readonly WebApplicationFactory<Startup> _factory;
 

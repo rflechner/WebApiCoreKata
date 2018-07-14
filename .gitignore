@@ -216,6 +216,4 @@ FakesAssemblies/
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 
-src/WebApiCoreKata/\.idea/\.idea\.WebApiCoreKata/\.idea/
-
-src/WebApiCoreKata/\.idea/\.idea\.WebApiCoreKata/
+*.idea/

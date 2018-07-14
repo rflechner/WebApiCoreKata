@@ -7,7 +7,7 @@ namespace WebApiCoreKata.Persistence.SqlServer.Database
 {
     /**
     Generated with:
-    dotnet ef dbcontext scaffold "Server=BIG_ROMCY\SQLEXPRESS;Database=WebApiCoreKata;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Database -c KataContext
+    dotnet ef dbcontext scaffold "Server=(local)\SQLEXPRESS;Database=WebApiCoreKata;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Database -c KataContext
     */
     public partial class KataContext : DbContext
     {
@@ -25,7 +25,7 @@ namespace WebApiCoreKata.Persistence.SqlServer.Database
             if (!optionsBuilder.IsConfigured)
             {
                 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=BIG_ROMCY\\SQLEXPRESS;Database=WebApiCoreKata;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=(local)\\SQLEXPRESS;Database=WebApiCoreKata;Trusted_Connection=True;");
             }
         }
 
