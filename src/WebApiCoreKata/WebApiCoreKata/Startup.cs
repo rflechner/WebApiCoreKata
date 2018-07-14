@@ -48,6 +48,7 @@ namespace WebApiCoreKata
                 app.UseDeveloperExceptionPage();
             }
 
+            // samples of middlewares to explain pipeline
             app.Use((context, next) =>
             {
                 context.Response.Headers.Add("lala", "toto");

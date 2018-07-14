@@ -10,15 +10,14 @@ namespace WebApiCoreKata.Models
     public string LastName { get; set; }
     public DateTime Birth { get; set; }
     
-    public static CustomerPresenter From(Customer model)
+    public static CustomerPresenter From(Customer model) => new CustomerPresenter
     {
-      return new CustomerPresenter
-      {
-        Id = model.Id.Value,
-        Birth = model.Birth,
-        FirstName = model.FirstName,
-        LastName = model.LastName
-      };
-    }
+      Id = model.Id.Value,
+      Birth = model.Birth,
+      FirstName = model.FirstName,
+      LastName = model.LastName
+    };
+
+    public Customer ToDomain() => new Customer(Id, FirstName, LastName, Birth);
   }
 }

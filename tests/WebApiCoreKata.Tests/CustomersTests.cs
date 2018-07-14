@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
@@ -13,6 +14,42 @@ namespace WebApiCoreKata.Tests
   {
     public CustomersTests(CustomWebApplicationFactory<Startup> factory) : base(factory)
     {
+    }
+
+    [Theory]
+    [InlineData(1)]
+    public async Task Post_CustomersSaveIt(int count)
+    {
+      var client = Factory.CreateClient(
+        new WebApplicationFactoryClientOptions
+        {
+          AllowAutoRedirect = false
+        });
+
+      AccessDatabase(db =>
+      {
+        Assert.Equal(0, db.Customers.ToList().Count);
+      });
+      
+      // Act
+      var response = await PostJson(client, "/api/customers", 
+        new CustomerDto
+          {
+            Birth = new DateTime(1999, 04, 12),
+            FirstName = "Jean",
+            LastName = "Paul"
+          });
+
+      // Assert
+      response.EnsureSuccessStatusCode(); // Status Code 200-299
+
+      Assert.Equal("application/json", response.Content.Headers.ContentType.MediaType);
+      Assert.Equal("utf-8", response.Content.Headers.ContentType.CharSet);
+      
+      AccessDatabase(db =>
+      {
+        Assert.Equal(count, db.Customers.ToList().Count);
+      });
     }
 
     [Theory]
@@ -39,7 +76,7 @@ namespace WebApiCoreKata.Tests
         });
       
       // Act
-      var response = await client.GetAsync("/api/customers");
+      var response = await client.GetAsync("/api/customers/all");
 
       // Assert
       response.EnsureSuccessStatusCode(); // Status Code 200-299

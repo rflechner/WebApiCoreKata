@@ -10,6 +10,7 @@ namespace WebApiCoreKata.Domain.ValueObjects
         }
 
         public Guid Value { get; }
+        public bool IsEmpty => Value == Guid.Empty;
 
         public static implicit operator CustomerId(Guid value) => new CustomerId(value);
     }

@@ -7,7 +7,7 @@ In progress ...
 Create a WebApi Kata to develop a Web API using:
 
 - TDD
-- Hexagonal Architecture
+- Hexagonal Architecture (with DTO and anti-corruption layers)
 - `Microsoft.AspNetCore.Mvc.Testing`
 - `Microsoft.EntityFrameworkCore`
 
